@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello world!!!</p>
+    <table>
+        <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Slika</th>
+        </tr>
+        {% for z in lista %}
+            <tr>
+                <td>{{ z[1] }}</td>
+                <td>{{ z[2] }}</td>
+                {% if z[3] == 1 %}
+                <!-- src={{ "/slika_zaposlenika?zaposlenik_id=%s"|format(z[0])}} --> 
+                <td><img 
+                        src={{ "/slika_zaposlenika_v2/%s"|format(z[0])}} 
+                        width="100" 
+                        height="100">
+                </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
